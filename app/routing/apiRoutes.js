@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     let answers = req.body;
     // function that matches your answers with each character
-    matchCharacter(answers);
+    res.json(matchCharacter(answers));
   });
 
   function matchCharacter(answers) {
@@ -43,7 +43,7 @@ module.exports = function(app) {
     do {
       for (let i = 0; i < tests.length; i++) {
         if (tests[i] === bestMatch) {
-          // console.log("The match is " + friends[i].name);
+          console.log("The match is " + friends[i].name);
           match = true;
           return;
         }
