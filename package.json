@@ -1,0 +1,20 @@
+{
+  "name": "friend-finder-hw",
+  "version": "1.0.0",
+  "description": "Homework for DU Coding Bootcamp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preaksneview/friend-finder-hw.git"
+  },
+  "author": "Jordan Boggs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preaksneview/friend-finder-hw/issues"
+  },
+  "homepage": "https://github.com/preaksneview/friend-finder-hw#readme"
+}
