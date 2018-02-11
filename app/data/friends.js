@@ -90,3 +90,5 @@ const friends = [
     scores: [1, 2, 4, 3, 2, 3, 2, 1, 3, 2]
   }
 ];
+
+module.exports = friends;
