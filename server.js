@@ -11,17 +11,8 @@ const PORT = process.env.port || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/home.html"));
-});
-
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/survey.html"));
-});
-
-app.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/home.html"));
-});
+// Routes
+require('./app/routing/htmlRoutes.js')(app);
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
