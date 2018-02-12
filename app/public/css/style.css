@@ -1,19 +1,19 @@
-* {
-  font-size: 16px;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.title {
-  font-size: 2.441rem;
+main {
+  flex: 1 0 auto;
 }
 
-.description {
-  font-size: 1.953rem; 
+.welcome {
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 1.67rem;
 }
 
-.cta {
-  font-size: 1.25rem;
-}
-
-.button {
-  font-size: 1.25rem;
+.welcome__divider {
+  background-color: #999;
 }
