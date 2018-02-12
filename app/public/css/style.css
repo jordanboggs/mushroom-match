@@ -1,0 +1,19 @@
+* {
+  font-size: 16px;
+}
+
+.title {
+  font-size: 2.441rem;
+}
+
+.description {
+  font-size: 1.953rem; 
+}
+
+.cta {
+  font-size: 1.25rem;
+}
+
+.button {
+  font-size: 1.25rem;
+}
