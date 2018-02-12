@@ -8,16 +8,26 @@ main {
   flex: 1 0 auto;
 }
 
-.welcome {
+.welcome, .survey {
   background-color: #ddd;
   border-radius: 5px;
   padding: 1.67rem;
 }
 
-.welcome__divider {
+.welcome__divider, .survey__divider {
   background-color: #999;
 }
 
 .fa-heart {
   color: #ec407a;
+}
+
+/* Changes between empty and full heart on hover */
+.icon-link:hover .icon-link--no-hover,
+.icon-link--hover {
+  display: none;
+}
+
+.icon-link:hover .icon-link--hover {
+  display: inline;
 }

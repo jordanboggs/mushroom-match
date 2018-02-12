@@ -3,9 +3,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Mushroom Match</title>
 </head>
 <body>
-  <h1>Survey!</h1>
+  <main class="container">
+    <article class="col l8 offset-4 z-depth-2 survey">
+      <h1><a class="icon-link" href="/"><i class="far fa-heart icon-link--no-hover"></i><i class="fas fa-heart icon-link--hover"></i></a> Mushroom Match Survey</h1>
+      <div class="divider survey__divider"></div>
+      <form action="/api/new" method="post">
+        
+      </form>
+    </article>
+  </main>
+  <footer class="page-footer pink">
+    <div class="footer-copyright pink darken-1">
+      <div class="container">
+        <span class="right">
+          <a class="grey-text text-lighten-3" href="/api/friends">API Friends List</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+          <a class="grey-text text-lighten-3" href="https://github.com/preaksneview/friend-finder-hw" target="_blank">GitHub Repo</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>
