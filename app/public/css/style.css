@@ -17,3 +17,7 @@ main {
 .welcome__divider {
   background-color: #999;
 }
+
+.fa-heart {
+  color: #ec407a;
+}
