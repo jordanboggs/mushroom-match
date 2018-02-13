@@ -51,9 +51,11 @@ module.exports = function(app) {
           match = true;
           const name = friends[i].name;
           const photo = friends[i].photo;
+          const description = friends[i].description;
           return {
             name: name,
-            photo: photo
+            photo: photo,
+            description: description
           };
         }
       }
