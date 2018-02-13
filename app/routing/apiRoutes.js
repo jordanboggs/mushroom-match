@@ -15,10 +15,9 @@ module.exports = function(app) {
     for (let i = 0; i < answers.length; i++) {
       answers[i] = parseInt(answers[i]);
     }
-    console.log(answers);
+
     // function that matches your answers with each character
     let modalHtml = matchCharacter(answers);
-    console.log(modalHtml);
     res.json(modalHtml);
   });
 

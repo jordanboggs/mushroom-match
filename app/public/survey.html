@@ -144,10 +144,12 @@
           </div>
         </div>
         <div class="row">
-          <button type="submit" class="waves-effect waves-light btn submit">Get results</button>
+          <button type="submit" data-target="modal1" class="waves-effect waves-light btn modal-trigger submit">Get results</button>
         </div>
       </form>
     </article>
+    <aside id="modal1" class="modal">
+    </aside>
   </main>
   <footer class="page-footer">
     <div class="footer-copyright">
@@ -169,6 +171,8 @@
     $(document).ready(function() {
       $('select').material_select();
 
+      $("#modal1").modal();
+
       $(".submit").on("click", function(event) {
         event.preventDefault();
 
@@ -186,10 +190,18 @@
             $('#wah').val()
           ]
         };
-        console.log(answers);
 
         $.post('/api/new', answers, function(res) {
-          console.log(res);
+          // Put response data in modal
+          $("#modal1").html(
+            `
+            <div class="modal-content">
+              <h3>Here's your match...</h3>
+              <h4>${res.name}</h4>
+              <img src="${res.photo}" alt="${res.name}"/>
+            </div>
+            `
+          );
         });
       });
     });
