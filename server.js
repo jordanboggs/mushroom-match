@@ -12,7 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '/app/public')));
+/* NOTE IMPORTANT
+   Remember to change which static path you use
+*/
+// app.use(express.static(path.join(__dirname, '/app/public')));
+app.use(express.static(path.join(__dirname, '/')));
 
 // Routes
 require('./app/routing/apiRoutes.js')(app);

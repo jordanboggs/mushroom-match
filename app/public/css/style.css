@@ -8,8 +8,13 @@ main {
   flex: 1 0 auto;
 }
 
-.welcome, .survey {
+.welcome {
   background-color: #ddd;
+  border-radius: 5px;
+  padding: 1.67rem;
+}
+
+.survey {
   border-radius: 5px;
   padding: 1.67rem;
 }
@@ -19,7 +24,7 @@ main {
 }
 
 .fa-heart {
-  color: #ec407a;
+  color: #d81b60;
 }
 
 /* Changes between empty and full heart on hover */
@@ -30,4 +35,8 @@ main {
 
 .icon-link:hover .icon-link--hover {
   display: inline;
+}
+
+.quiz-q {
+  font-weight: 500;
 }
