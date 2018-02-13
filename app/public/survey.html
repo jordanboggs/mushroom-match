@@ -12,11 +12,11 @@
     <article class="col l8 offset-4 z-depth-2 survey">
       <h1><a class="icon-link" href="/"><i class="far fa-heart icon-link--no-hover"></i><i class="fas fa-heart icon-link--hover"></i></a> Mushroom Match Survey</h1>
       <div class="divider survey__divider"></div>
-      <form action="/api/new" method="post">
+      <form>
         <div class="row">
             <div class="input-field col s12 m9 l8 xl6">
               <p class="quiz-q">I prefer hot climates to cold ones.</p>
-              <select name="climate" id="climate">
+              <select id="climates">
                 <option value="" disabled selected>Choose an option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -29,7 +29,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I often find myself in situations I can't get out of.</p>
-            <select name="climate" id="climate">
+            <select id="situations">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -42,7 +42,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I feel most at home in a castle.</p>
-            <select name="climate" id="climate">
+            <select id="castle">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -55,7 +55,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I often play sports with people I call my friends.</p>
-            <select name="climate" id="climate">
+            <select id="sports">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -68,7 +68,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I come from Italy, probably.</p>
-            <select name="climate" id="climate">
+            <select id="italy">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -81,7 +81,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">If there's a scheme, I'm in on it.</p>
-            <select name="climate" id="climate">
+            <select id="scheme">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -94,7 +94,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I consider myself high-class and fancy.</p>
-            <select name="climate" id="climate">
+            <select id="fancy">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -107,7 +107,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I am talkative with a lot to say.</p>
-            <select name="climate" id="climate">
+            <select id="talk">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -120,7 +120,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">I'd rather play a supportive role than lead the way.</p>
-            <select name="climate" id="climate">
+            <select id="role">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -133,7 +133,7 @@
         <div class="row">
           <div class="input-field col s12 m9 l8 xl6">
             <p class="quiz-q">Waaaaaaaaaaaah!</p>
-            <select name="climate" id="climate">
+            <select id="wah">
               <option value="" disabled selected>Choose an option</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="row">
-          <button type="submit" class="waves-effect waves-light btn">Get results</button>
+          <button type="submit" class="waves-effect waves-light btn submit">Get results</button>
         </div>
       </form>
     </article>
@@ -168,6 +168,26 @@
   <script>
     $(document).ready(function() {
       $('select').material_select();
+
+      $(".submit").on("click", function(event) {
+        event.preventDefault();
+
+        const answers = [
+            $("#climates").val(),
+            $("#situations").val(),
+            $("#castle").val(),
+            $("#sports").val(),
+            $("#italy").val(),
+            $('#scheme').val(),
+            $('#fancy').val(),
+            $('#talk').val(),
+            $('#role').val(),
+            $('#wah').val()
+        ];
+        $.post("api/new", answers, function(res) {
+          console.log(res);
+        });
+      });
     });
   </script>
 </body>

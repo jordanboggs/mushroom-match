@@ -16,6 +16,7 @@ module.exports = function(app) {
     // function that matches your answers with each character
     let modalHtml = matchCharacter(answers);
     res.json(modalHtml);
+    console.log(modalHtml);
   });
 
   function matchCharacter(answers) {
@@ -48,10 +49,10 @@ module.exports = function(app) {
           match = true;
           const name = friends[i].name;
           const photo = friends[i].photo;
-          console.log({
+          return {
             name: name,
             photo: photo
-          });
+          };
         }
       }
       bestMatch++;
