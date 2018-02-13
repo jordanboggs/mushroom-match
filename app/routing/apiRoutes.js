@@ -52,6 +52,8 @@ module.exports = function(app) {
           const name = friends[i].name;
           const photo = friends[i].photo;
           const description = friends[i].description;
+
+          // This is the response to fill out the modal
           return {
             name: name,
             photo: photo,
