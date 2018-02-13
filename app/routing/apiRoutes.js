@@ -11,12 +11,15 @@ module.exports = function(app) {
   });
 
   app.post("/api/new", function(req, res) {
-    let answers = req.body.quiz;
+    let answers = req.body["quiz[]"];
+    for (let i = 0; i < answers.length; i++) {
+      answers[i] = parseInt(answers[i]);
+    }
     console.log(answers);
     // function that matches your answers with each character
     let modalHtml = matchCharacter(answers);
-    res.json(modalHtml);
     console.log(modalHtml);
+    res.json(modalHtml);
   });
 
   function matchCharacter(answers) {
