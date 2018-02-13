@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.welcome {
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 1.67rem;
+}
+
+.survey {
+  border-radius: 5px;
+  padding: 1.67rem;
+}
+
+.welcome__divider, .survey__divider {
+  background-color: #999;
+}
+
+.fa-heart {
+  color: #d81b60;
+}
+
+/* Changes between empty and full heart on hover */
+.icon-link:hover .icon-link--no-hover,
+.icon-link--hover {
+  display: none;
+}
+
+.icon-link:hover .icon-link--hover {
+  display: inline;
+}
+
+.quiz-q {
+  font-weight: bold;
+}

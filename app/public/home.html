@@ -3,9 +3,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Mushroom Match</title>
 </head>
 <body>
-  <h1>Dating!!</h1>
+  <main class="container">
+    <article class="col l8 offset-4 z-depth-2 welcome">
+      <h1><a class="icon-link" href="#"><i class="far fa-heart icon-link--no-hover"></i><i class="fas fa-heart icon-link--hover"></i></a> Mushroom Match Survey</h1>
+      <div class="divider welcome__divider"></div>
+      <h3>Ten quick questions. A lifetime of compatibility.</h3>
+      <p class="flow-text">Try the Mushroom Kingdom's number one dating app.</p>
+      <a href="/survey">
+        <button id="start-survey" class="waves-effect waves-light btn">
+            <i class="far fa-list-alt"></i> Go to Survey
+          </button>
+      </a>
+   </article>
+  </main>
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <span class="right">
+          <a class="grey-text text-lighten-5" href="/api/friends">API Friends List</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+          <a class="grey-text text-lighten-5" href="https://github.com/preaksneview/friend-finder-hw" target="_blank">GitHub Repo</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+  <script src="js/materialize.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>

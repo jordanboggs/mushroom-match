@@ -11,6 +11,9 @@ const PORT = process.env.port || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Serve static files
+app.use(express.static(path.join(__dirname, '/app/public')));
+
 // Routes
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
