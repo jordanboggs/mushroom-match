@@ -1,4 +1,5 @@
 body {
+  background-image: url("../images/pink_rice.png");
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -8,13 +9,8 @@ main {
   flex: 1 0 auto;
 }
 
-.welcome {
-  background-color: #ddd;
-  border-radius: 5px;
-  padding: 1.67rem;
-}
-
-.survey {
+.welcome, .survey {
+  background-color: #eee;
   border-radius: 5px;
   padding: 1.67rem;
 }
