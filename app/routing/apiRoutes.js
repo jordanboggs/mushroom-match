@@ -11,7 +11,11 @@ module.exports = function(app) {
   });
 
   app.post("/api/new", function(req, res) {
-    let answers = req.body;
+    let answers = req.body["quiz[]"];
+    for (let i = 0; i < answers.length; i++) {
+      answers[i] = parseInt(answers[i]);
+    }
+
     // function that matches your answers with each character
     let modalHtml = matchCharacter(answers);
     res.json(modalHtml);
@@ -47,9 +51,11 @@ module.exports = function(app) {
           match = true;
           const name = friends[i].name;
           const photo = friends[i].photo;
+          const description = friends[i].description;
           return {
             name: name,
-            photo: photo
+            photo: photo,
+            description: description
           };
         }
       }
