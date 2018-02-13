@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/new", function(req, res) {
-    let answers = req.body;
+    let answers = req.body.quiz;
     console.log(answers);
     // function that matches your answers with each character
     let modalHtml = matchCharacter(answers);

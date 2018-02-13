@@ -172,21 +172,24 @@
       $(".submit").on("click", function(event) {
         event.preventDefault();
 
-        const answers = [
-            $("#climates").val(),
-            $("#situations").val(),
-            $("#castle").val(),
-            $("#sports").val(),
-            $("#italy").val(),
-            $('#scheme').val(),
-            $('#fancy').val(),
-            $('#talk').val(),
-            $('#role').val(),
-            $('#wah').val()
-        ];
+        const answers = {
+          "quiz": [
+            parseInt($("#climates").val()),
+            parseInt($("#situations").val()),
+            parseInt($("#castle").val()),
+            parseInt($("#sports").val()),
+            parseInt($("#italy").val()),
+            parseInt($('#scheme').val()),
+            parseInt($('#fancy').val()),
+            parseInt($('#talk').val()),
+            parseInt($('#role').val()),
+            parseInt($('#wah').val())
+          ]
+        };
+        console.log(answers);
         $.post("api/new", answers, function(res) {
           console.log(res);
-        });
+        }, "json");
       });
     });
   </script>
