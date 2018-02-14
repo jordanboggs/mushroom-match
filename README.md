@@ -1,5 +1,6 @@
 # Mushroom Match
 **The Mushroom Kingdom's number one dating app**
+
 *Created by Jordan Boggs for the University of Denver Coding Bootcamp*
 
 ## How to use
