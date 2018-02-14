@@ -173,7 +173,7 @@
 
       $("#modal1").modal();
 
-      $(".submit").on("click", function(event) {
+      $(document).on("click", ".submit", function(event) {
         event.preventDefault();
 
         const answers = {
@@ -191,19 +191,38 @@
           ]
         };
 
-        $.post('/api/new', answers, function(res) {
-          // Put response data in modal
+        // Validate that everything was filled out 
+        let nullValues = false;
+        for (let i = 0; i < answers.quiz.length; i++) {
+          if (answers.quiz[i] === null) {
+            nullValues = true;
+          }
+        }
+
+        if (!nullValues) {
+          $.post('/api/new', answers, function(res) {
+            // Put response data in modal
+            $("#modal1").html(
+              `
+              <div class="modal-content">
+                <h3 class="pink-text">Here's your match...</h3>
+                <h4>${res.name}</h4>
+                <img src="${res.photo}" alt="${res.name}"/>
+                <p>${res.description}</p>
+              </div>
+              `
+            );
+          });
+        }
+        else {
           $("#modal1").html(
             `
             <div class="modal-content">
-              <h3 class="pink-text">Here's your match...</h3>
-              <h4>${res.name}</h4>
-              <img src="${res.photo}" alt="${res.name}"/>
-              <p>${res.description}</p>
+              <h3 class="red-text">Sorry, all fields are required.</h3>
             </div>
             `
           );
-        });
+        }
       });
     });
   </script>
