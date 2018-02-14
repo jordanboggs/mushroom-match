@@ -36,3 +36,7 @@ main {
 .quiz-q {
   font-weight: bold;
 }
+
+.modal__img {
+  max-width: 90%;
+}
